@@ -5,12 +5,13 @@
 
 
 # Input injection
-def transcode_file(request, filename):
-    command = 'ffmpeg -i "{source}" output_file.mpg'.format(source=filename)  # a bad idea!
+def transcode_file( filename):
+    command = 'ffmpeg -i "{source}" output_file.mpg'.format(source=filename)
+    # a bad idea!
 
 
 # Assert statements
-def access_function(request, user):
+def access_function( user):
     assert user.is_admin, 'user does not have access'
     # secure code...
 
@@ -19,4 +20,3 @@ def access_function(request, user):
 class RunBinSh():
     def __reduce__(self):
         return
-
