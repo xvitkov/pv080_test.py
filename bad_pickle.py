@@ -5,13 +5,14 @@
 
 
 # Input injection
-def transcode_file( filename):
+def transcode_file(filename):
     command = 'ffmpeg -i "{source}" output_file.mpg'.format(source=filename)
+    return command
     # a bad idea!
 
 
 # Assert statements
-def access_function( user):
+def access_function(user):
     assert user.is_admin, 'user does not have access'
     # secure code...
 
