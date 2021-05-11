@@ -2,12 +2,11 @@
 # taken from https://hackernoon.com/10-common-security-gotchas-in-python
 # -and-how-to-avoid-them-e19fbe265e03
 
-import subprocess
+
 
 # Input injection
 def transcode_file(request, filename):
-    command = 'ffmpeg -i "{source}" output_file.mpg'.format(source=filename)
-    subprocess.call(command, shell=True)  # a bad idea!
+    command = 'ffmpeg -i "{source}" output_file.mpg'.format(source=filename)  # a bad idea!
 
 
 # Assert statements
@@ -19,6 +18,5 @@ def access_function(request, user):
 # Pickles
 class RunBinSh():
     def __reduce__(self):
-        return (subprocess.Popen, ('/bin/sh')
+        return
 
-print(base64.b64encode(cPickle.dumps(RunBinSh())))
